@@ -1,0 +1,717 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Dan the Waste Wizard | Daniel Hannigan</title>
+  <meta name="description" content="Waste processing expert and consultant. Hands-on machinery knowledge, plant sourcing, 360 operation, site management.">
+  <style>
+:root {
+  --g: #22c55e;
+  --gd: #166534;
+  --bg: #0b1120;
+  --t: #e2e8f0;
+  --m: #94a3b8;
+  --b: #334155;
+  --card: #1e2937;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  background: var(--bg);
+  color: var(--t);
+  line-height: 1.6;
+}
+
+a { color: var(--g); }
+
+.wrap {
+  max-width: 72rem;
+  margin: 0 auto;
+  padding: 0 1.25rem;
+}
+
+header {
+  border-bottom: 1px solid var(--b);
+  padding: 1rem 0;
+  position: sticky;
+  top: 0;
+  background: rgba(11, 17, 32, 0.95);
+  backdrop-filter: blur(8px);
+  z-index: 10;
+}
+
+.hdr {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: .75rem;
+}
+
+.brand {
+  text-decoration: none;
+  color: inherit;
+}
+
+.brand b {
+  display: block;
+  font-size: 1.1rem;
+}
+
+.brand small {
+  color: var(--g);
+  font-size: .8rem;
+}
+
+nav a {
+  margin-right: 1rem;
+  text-decoration: none;
+  color: var(--t);
+  font-weight: 600;
+  font-size: .9rem;
+}
+
+nav a:hover { color: var(--g); }
+
+.hero {
+  padding: 3rem 0 2rem;
+  background: linear-gradient(rgba(11,17,32,0.88), rgba(11,17,32,0.92)), url('https://images.unsplash.com/photo-1581092160562-40aa08e78837') center/cover no-repeat;
+  border-radius: 12px;
+  margin-bottom: 1rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(180deg, rgba(11,17,32,0.3) 0%, rgba(11,17,32,0.75) 70%),
+    url('https://images.unsplash.com/photo-1611273426858-450d8e3c9fce') center/cover;
+  opacity: 0.35;
+  z-index: -1;
+  pointer-events: none;
+}
+
+.hero-box {
+  text-align: center;
+  padding: 2.5rem 1.5rem;
+  border-radius: .75rem;
+  background: rgba(15, 23, 42, 0.75);
+  color: #fff;
+  border: 1px solid #475569;
+  backdrop-filter: blur(4px);
+}
+
+.hero-box h1 {
+  font-size: clamp(1.4rem, 4vw, 2.1rem);
+}
+
+.hero-box p {
+  margin-top: 1rem;
+  color: #cbd5e1;
+  max-width: 40rem;
+  margin-inline: auto;
+}
+
+.btns {
+  margin-top: 1.5rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: .5rem;
+  justify-content: center;
+}
+
+.btn {
+  display: inline-block;
+  padding: .6rem 1.1rem;
+  border-radius: .5rem;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: .85rem;
+}
+
+.btn-p {
+  background: var(--g);
+  color: #fff;
+}
+
+.btn-s {
+  border: 1px solid #475569;
+  color: #e2e8f0;
+  background: rgba(255,255,255,0.06);
+}
+
+section {
+  padding: 2rem 0;
+}
+
+h2 {
+  color: var(--g);
+  margin-bottom: .75rem;
+  font-size: 1.4rem;
+}
+
+.callout {
+  border: 1px solid rgba(34,197,94,.3);
+  background: rgba(34,197,94,.08);
+  padding: 1rem;
+  border-radius: .5rem;
+  max-width: 42rem;
+  font-size: .9rem;
+  margin-bottom: 1.5rem;
+}
+
+.callout b { color: var(--g); }
+
+ul {
+  margin-left: 1.2rem;
+  max-width: 42rem;
+}
+
+ul.plain {
+  list-style: none;
+  margin-left: 0;
+}
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .4rem;
+  list-style: none;
+  margin: 1rem 0;
+}
+
+.tags li {
+  border: 1px solid var(--b);
+  padding: .3rem .7rem;
+  border-radius: 999px;
+  font-size: .8rem;
+  background: var(--card);
+}
+
+.price {
+  border-bottom: 1px solid var(--b);
+  padding-bottom: 1rem;
+  margin-bottom: 1rem;
+  max-width: 42rem;
+}
+
+.price h3 {
+  font-size: 1rem;
+  display: inline;
+}
+
+.rate {
+  float: right;
+  font-weight: 700;
+  color: var(--g);
+}
+
+.note {
+  font-size: .85rem;
+  color: var(--m);
+  margin-top: .35rem;
+  clear: both;
+}
+
+.contact-box {
+  max-width: 26rem;
+  margin: 2rem auto 0;
+  text-align: center;
+  background: var(--gd);
+  color: #fff;
+  padding: 2rem;
+  border-radius: 1rem;
+}
+
+.contact-box a { color: #fff; }
+
+.filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .4rem;
+  margin-bottom: 1rem;
+}
+
+.filters button {
+  border: 1px solid var(--b);
+  background: var(--card);
+  color: var(--t);
+  padding: .4rem .9rem;
+  border-radius: 999px;
+  cursor: pointer;
+  font-size: .8rem;
+  font-weight: 600;
+}
+
+.filters button.on {
+  background: var(--g);
+  color: #0b1120;
+  border-color: var(--g);
+  font-weight: 700;
+}
+
+.grid {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+}
+
+.card {
+  border: 1px solid var(--b);
+  border-radius: .75rem;
+  overflow: hidden;
+  background: var(--card);
+}
+
+.card.hide { display: none; }
+
+.card img {
+  width: 100%;
+  aspect-ratio: 4/3;
+  object-fit: cover;
+  filter: brightness(0.9);
+}
+
+.card-body {
+  padding: .85rem;
+}
+
+.card .label {
+  font-size: .7rem;
+  color: var(--g);
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.card h3 {
+  font-size: .95rem;
+  margin: .2rem 0;
+}
+
+.card p {
+  font-size: .82rem;
+  color: var(--m);
+}
+
+footer {
+  border-top: 1px solid var(--b);
+  text-align: center;
+  padding: 1.5rem;
+  font-size: .8rem;
+  color: var(--m);
+  margin-top: 2rem;
+}
+
+.page { display: none; }
+.page.active { display: block; }
+
+/* On Site section extras */
+.onsite-grid {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+}
+
+.onsite-card {
+  border: 1px solid var(--b);
+  border-radius: .75rem;
+  padding: 1rem;
+  background: var(--card);
+}
+
+.onsite-card h3 {
+  font-size: 1.05rem;
+  color: var(--g);
+  margin-bottom: .4rem;
+}
+
+.onsite-card ul {
+  margin-left: 1rem;
+  font-size: .9rem;
+}
+
+/* Dark mode polish + background imagery */
+.hero {
+  position: relative;
+  overflow: hidden;
+}
+
+.hero::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(180deg, rgba(11,17,32,0.3) 0%, rgba(11,17,32,0.75) 70%),
+    url('https://images.unsplash.com/photo-1611273426858-450d8e3c9fce') center/cover;
+  opacity: 0.35;
+  z-index: -1;
+  pointer-events: none;
+}
+
+section {
+  position: relative;
+}
+
+.wrap {
+  position: relative;
+}
+
+/* Make cards and content pop on dark */
+.card, .onsite-card, .price, .callout {
+  box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+}
+
+.filters button:hover {
+  border-color: var(--g);
+  color: var(--g);
+}
+
+/* Better readable prices in dark */
+.price h3, .rate {
+  color: var(--t);
+}
+  </style>
+</head>
+<body>
+<header>
+  <div class="wrap hdr">
+    <a href="#" class="brand" onclick="show('home');return false">
+      <b>Dan the Waste Wizard</b>
+      <small>Daniel Hannigan · Waste Consultant</small>
+    </a>
+    <nav>
+      <a href="#" onclick="show('home');return false">Home</a>
+      <a href="#" onclick="show('services');return false">Services</a>
+      <a href="#" onclick="show('onsite');return false">On Site</a>
+      <a href="#" onclick="show('machinery');return false">Machinery</a>
+      <a href="#" onclick="show('contact');return false">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<!-- HOME -->
+<div id="home" class="page active" style="display:block">
+  <div class="wrap hero">
+    <div class="hero-box">
+      <h1>Waste Processing Expert &amp; Consultant</h1>
+      <p>Hands-on specialist across recycling centres, transfer stations, and waste processing sites. I advise, source hire through my network, operate on site, and train your team. <strong>I do not own the machines.</strong></p>
+      <div class="btns">
+        <a class="btn btn-p" href="#" onclick="show('services');return false">What I Offer</a>
+        <a class="btn btn-s" href="#" onclick="show('onsite');return false">How I Work On Site</a>
+      </div>
+    </div>
+  </div>
+  <div class="wrap">
+    <div class="callout">
+      <b>Straight talk</b><br>
+      I do <strong>not</strong> own a plant hire fleet. I am a self-employed consultant — my value is expertise, honest advice, and industry contacts.
+    </div>
+
+    <section>
+      <h2>Hands-On Capabilities – What I Can Do On Site</h2>
+      <ul>
+        <li><strong>Set up and run site operations</strong> for shredders and mobile plant</li>
+        <li><strong>Process wood waste, SRF, MRF</strong> and all other waste streams properly through the right plant – and set up the lines if needed</li>
+        <li><strong>Move and position mobile plant</strong> including shredders, screeners, crushers and more</li>
+        <li><strong>Blade changes &amp; door knife changes</strong> on shredders</li>
+        <li><strong>Full shredder troubleshooting</strong> – when a machine goes down I check it over and find/fix the problem</li>
+        <li><strong>Operate</strong> 360s, loading shovels and material handlers (£300/day for 8-hour shift)</li>
+        <li><strong>Advise</strong> on processing flows and machinery + source hire through my network</li>
+        <li><strong>Manage</strong> site shifts and provide operational leadership when you need cover</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Why Work With Me</h2>
+      <p>I get on the machines, show your team best practice in real time, remove bottlenecks, and leave your site running noticeably better.</p>
+    </section>
+
+    <section>
+      <h2>Free Site Assessment</h2>
+      <p>No charge. No obligation. I walk your yard and show you where you are losing time and money.</p>
+    </section>
+  </div>
+</div>
+
+<!-- SERVICES -->
+<div id="services" class="page">
+  <div class="wrap" style="padding-top:2rem">
+    <h1 style="font-size:2rem;margin-bottom:.5rem">What I Offer</h1>
+    <p style="color:var(--m);margin-bottom:1.5rem">Expertise and connections — you hire the iron; I help you choose, source, run, and manage it.</p>
+
+    <section>
+      <h2>Expert Consultancy</h2>
+      <p>Advice on processing flows and machinery for MRFs, transfer stations, skip yards, and recycling centres. Walkarounds, audits, and improvement plans. <strong>£550/day</strong></p>
+    </section>
+
+    <section>
+      <h2>Plant Sourcing</h2>
+      <p>I use my network to arrange hire of shredders, wash plants, sorters, and heavy plant. Quoted per project — hire paid to supplier.</p>
+    </section>
+
+    <section>
+      <h2>Plant Operation</h2>
+      <p>360 excavators, loading shovels, and material handlers. Shift cover and peak loads. <strong>£300/day (8-hour shift)</strong> — operator only, machine hired separately.</p>
+    </section>
+
+    <section>
+      <h2>Site Management</h2>
+      <p>Cover for plant managers — operational leadership on site. <strong>£450/day</strong></p>
+    </section>
+
+    <section>
+      <h2>Core Skills</h2>
+      <ul>
+        <li>Machinery operation &amp; optimisation (wood waste, SRF, MRF lines)</li>
+        <li>Shredder mechanical work — blade changes, door knives, full troubleshooting when machines go down</li>
+        <li>Mobile plant setup &amp; movement (shredders, screeners, crushers)</li>
+        <li>Operator training &amp; emergency on-site support</li>
+        <li>Waste stream improvement &amp; site operations setup</li>
+        <li>Health &amp; safety best practices</li>
+      </ul>
+    </section>
+  </div>
+</div>
+
+<!-- NEW: ON SITE -->
+<div id="onsite" class="page">
+  <div class="wrap" style="padding-top:2rem">
+    <h1 style="font-size:2rem;margin-bottom:.5rem">On Site With Me</h1>
+    <p style="color:var(--m);margin-bottom:1.5rem">I don’t just consult from the side — I’m on the ground with your team every day, enforcing standards and driving real improvements.</p>
+
+    <div class="callout">
+      <b>Safety first, results always</b><br>
+      Every site I work on starts with strong compliance, clear daily structure, and a culture of closing actions properly.
+    </div>
+
+    <div class="onsite-grid">
+      <div class="onsite-card">
+        <h3>1. Safety &amp; Compliance</h3>
+        <ul>
+          <li>SWPs/SOPs followed + enforced</li>
+          <li>RAMS &amp; method statements reviewed before work</li>
+          <li>Toolbox talks &amp; pre-start checks recorded</li>
+          <li>Incidents/near misses investigated and closed</li>
+          <li>Contamination control mindset</li>
+        </ul>
+      </div>
+
+      <div class="onsite-card">
+        <h3>2. Daily Site Management</h3>
+        <ul>
+          <li>Daily plan briefed (what/where/priority)</li>
+          <li>Staffing, cover and handover managed</li>
+          <li>Live supervision — issues handled same day</li>
+          <li>RAMS/permits aligned to actual tasks</li>
+          <li>Actions tracked and closed (not just logged)</li>
+        </ul>
+      </div>
+
+      <div class="onsite-card">
+        <h3>3. Production, Logs &amp; Reporting</h3>
+        <ul>
+          <li>Daily production logged + variances explained</li>
+          <li>Traffic and site flow monitored</li>
+          <li>Clear daily reporting and next steps</li>
+          <li>Audit-ready records maintained</li>
+        </ul>
+      </div>
+
+      <div class="onsite-card">
+        <h3>4. Traffic &amp; Segregation</h3>
+        <ul>
+          <li>Safe vehicle movement + controlled routes</li>
+          <li>Proper segregation and banksman coordination</li>
+          <li>Clear one-way systems where possible</li>
+        </ul>
+      </div>
+
+      <div class="onsite-card">
+        <h3>5. Maintenance &amp; Uptime</h3>
+        <ul>
+          <li>Mechanical maintenance reporting daily</li>
+          <li>Defects logged, escalated and followed up</li>
+          <li>Fuel and critical checks completed</li>
+        </ul>
+      </div>
+
+      <div class="onsite-card">
+        <h3>6. Quality &amp; Contamination Control</h3>
+        <ul>
+          <li>Weightbridge discipline and outbound checks</li>
+          <li>Correct waste segregation &amp; storage</li>
+          <li>Spill prevention and rapid response</li>
+          <li>Evidence captured where required</li>
+        </ul>
+      </div>
+    </div>
+
+    <section style="margin-top:1.5rem">
+      <h2>Non-Ferrous Metals Recovery</h2>
+      <p>Strong hands-on experience with non-ferrous streams (aluminium, copper, brass, cables, turnings). I help set up segregated bays, optimise eddy current separators, and improve metals recovery lines end-to-end.</p>
+    </section>
+
+    <section>
+      <h2>What This Delivers For You</h2>
+      <ul class="plain">
+        <li>✓ Stronger safety culture and fewer near-misses</li>
+        <li>✓ Predictable daily output and clearer reporting</li>
+        <li>✓ Better contamination control and higher quality loads</li>
+        <li>✓ Faster action closure and continuous improvement</li>
+        <li>✓ Peace of mind that the site is being run properly while you focus on the business</li>
+      </ul>
+    </section>
+  </div>
+</div>
+
+<!-- MACHINERY -->
+<div id="machinery" class="page">
+  <div class="wrap" style="padding-top:2rem">
+    <h1 style="font-size:2rem">Kit I Know — Not Kit I Own</h1>
+    <p style="color:var(--m);margin:1rem 0 1.5rem">Plant I have operated and optimised. I help you source hire and can operate on site.</p>
+
+    <div class="filters" id="filters">
+      <button class="on" data-f="all">All</button>
+      <button data-f="shredding">Shredding</button>
+      <button data-f="sorting">Sorting</button>
+      <button data-f="processing">Processing Lines</button>
+      <button data-f="heavy">Heavy Plant</button>
+      <button data-f="maintenance">Maintenance</button>
+    </div>
+    <p id="count" style="font-size:.85rem;color:var(--m);margin-bottom:1rem"></p>
+
+    <div class="grid" id="grid">
+      <article class="card" data-cat="shredding">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/b/b7/Hammer_mill.jpg" alt="High-Speed Hammer Mill for Fine Biomass" loading="lazy">
+        <div class="card-body">
+          <span class="label">High-Speed Hammer Mill</span>
+          <h3>High-Speed Hammer Mill for Fine Biomass</h3>
+          <p>Hands-on knowledge of hammer mill sizing, screen spec, and feed rates.</p>
+        </div>
+      </article>
+      <article class="card" data-cat="shredding">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/f/f9/Double_Shaft_Tire_Shredder.jpg" alt="Slow-Speed Shear Shredder for Tyres &amp; Bulky Waste" loading="lazy">
+        <div class="card-body">
+          <span class="label">Slow-Speed Shear Shredder</span>
+          <h3>Slow-Speed Shear Shredder for Tyres &amp; Bulky Waste</h3>
+          <p>Twin-shaft shear shredders for tyres and bulky feed.</p>
+        </div>
+      </article>
+      <article class="card" data-cat="shredding">
+        <img src="https://images.pexels.com/photos/3735747/pexels-photo-3735747.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=800" alt="Granulator for Plastics Recovery" loading="lazy">
+        <div class="card-body">
+          <span class="label">Plastics Granulator</span>
+          <h3>Granulator for Plastics Recovery</h3>
+          <p>Granulation for PET, HDPE, and film lines.</p>
+        </div>
+      </article>
+      <article class="card" data-cat="sorting">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/e/e5/Cadena_de_separadores_%C3%B3pticos.JPG" alt="Optical Sorting Line (TOMRA-Class)" loading="lazy">
+        <div class="card-body">
+          <span class="label">Optical Sorter</span>
+          <h3>Optical Sorting Line (TOMRA-Class)</h3>
+          <p>Sensor-based optical separation — I advise on fit and connect you to suppliers.</p>
+        </div>
+      </article>
+      <article class="card" data-cat="sorting">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/1/12/Bater%C3%ADa_de_captaciones_neum%C3%A1ticas.jpg" alt="Eddy Current for Non-Ferrous Metals" loading="lazy">
+        <div class="card-body">
+          <span class="label">Eddy Current Separator</span>
+          <h3>Eddy Current for Non-Ferrous Metals</h3>
+          <p>Belt speed, splitter setup, and feed presentation.</p>
+        </div>
+      </article>
+      <article class="card" data-cat="heavy">
+        <img src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?w=800&amp;q=80" alt="Loading Shovel for Bunker Feed" loading="lazy">
+        <div class="card-body">
+          <span class="label">Loading Shovel</span>
+          <h3>Loading Shovel for Bunker Feed</h3>
+          <p>Bunker feed and yard logistics — £300/day (8-hour shift) operator rate.</p>
+        </div>
+      </article>
+      <article class="card" data-cat="heavy">
+        <img src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?w=800&amp;q=80" alt="360 Excavator for Site Work" loading="lazy">
+        <div class="card-body">
+          <span class="label">360 Excavator</span>
+          <h3>360 Excavator for Site Work</h3>
+          <p>Site clearances and material handling.</p>
+        </div>
+      </article>
+    </div>
+  </div>
+</div>
+
+<!-- CONTACT -->
+<div id="contact" class="page">
+  <div class="wrap" style="padding-top:2rem">
+    <h1 style="font-size:2rem">Contact</h1>
+    <p style="color:var(--m);margin:1rem 0">Talk to me about consultancy, plant sourcing, operator cover, or site management.</p>
+
+    <div class="price"><h3>Initial Site Assessment</h3><span class="rate">Free</span><p class="note">No charge. No obligation.</p></div>
+    <div class="price"><h3>Expert Consultancy</h3><span class="rate">£550/day</span></div>
+    <div class="price"><h3>Site Management</h3><span class="rate">£450/day</span></div>
+    <div class="price"><h3>Plant Operation / 360 Driving</h3><span class="rate">£300/day (8 hrs)</span><p class="note">Operator only — machine hire separate. Flexible shifts available.</p></div>
+    <div class="price"><h3>Plant Sourcing</h3><span class="rate">Quoted per project</span></div>
+
+    <div class="contact-box">
+      <h2>Daniel Hannigan</h2>
+      <p style="opacity:.85;font-size:.9rem">Self-employed waste processing consultant</p>
+      <p style="margin-top:1rem"><a href="tel:07863917448">07863 917448</a></p>
+      <p><a href="mailto:dansdirect89@gmail.com">dansdirect89@gmail.com</a></p>
+      <p style="margin-top:1rem;font-size:.85rem">Worcestershire · Herefordshire · Shropshire · West Midlands · Birmingham</p>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <div class="wrap">&copy; Daniel Hannigan · Dan the Waste Wizard</div>
+</footer>
+
+<script>
+function show(id) {
+  document.querySelectorAll('.page').forEach(function(p) {
+    p.classList.remove('active');
+    p.style.display = '';
+  });
+  document.getElementById(id).classList.add('active');
+  window.scrollTo(0, 0);
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+  const filters = document.getElementById('filters');
+  if (filters) {
+    filters.addEventListener('click', function(e) {
+      const b = e.target.closest('button');
+      if (!b) return;
+      document.querySelectorAll('#filters button').forEach(x => x.classList.remove('on'));
+      b.classList.add('on');
+      const f = b.dataset.f;
+      let n = 0;
+      document.querySelectorAll('.card').forEach(c => {
+        const ok = f === 'all' || c.dataset.cat === f;
+        c.classList.toggle('hide', !ok);
+        if (ok) n++;
+      });
+      const countEl = document.getElementById('count');
+      if (countEl) countEl.textContent = 'Showing ' + n + ' machines';
+    });
+
+    const allBtn = filters.querySelector('[data-f=all]');
+    if (allBtn) allBtn.click();
+  }
+
+  const active = document.querySelector('.page.active');
+  if (!active) {
+    const home = document.getElementById('home');
+    if (home) home.style.display = 'block';
+  }
+});
+</script>
+</body>
+</html>
